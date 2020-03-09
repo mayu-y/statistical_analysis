@@ -81,8 +81,7 @@ dfer <- dfe[sample(1:90, 50)]
 
 
 ###all sample グラフ###
-list <- list(
-  "#1"=daar, "#2"=dabr, "#3"=dacr, "#4"=dadr, "#5"=daer,
+list <- list("#1"=daar, "#2"=dabr, "#3"=dacr, "#4"=dadr, "#5"=daer,
   "#1"=dbar, "#2"=dbcr, "#3"=dbdr, "#4"=dber, "#5"=dbfr,
   "#1"=dcar, "#2"=dccr, "#3"=dcdr, "#4"=dcer, "#5"=dcfr,
   "#1"=ddar, "#2"=ddbr, "#3"=ddcr, "#4"=dddr, "#5"=dder,
@@ -92,13 +91,13 @@ list <- list(
 #box
 boxplot(list, ylim=c(0, 2.0),las=1,cex.axis=0.75,
   names=rep(c("#1", "#2", "#3", "#4", "#5"), 6),
-  col=rep(c(0,4), each=5, times=3),ylab="ratio")
+  col=rep(c(0,4), each=5, times=3), ylab="ratio")
 
 #boxとbeeswarm重ねる
 library(beeswarm)
-boxplot(list, ylim=c(0, 2.0), las = 1, cex.axis=0.75,
-  names=rep(c("#1", "#2", "#3", "#4", "#5"), 6),ylab="ratio")
-beeswarm(list, data=NULL, col=rep(c(1,4), each=5, times=3),　pch = 16, cex=0.5, add=TRUE)
+boxplot(list, ylim=c(0, 2.0), las=1, cex.axis=0.75,
+  names=rep(c("#1", "#2", "#3", "#4", "#5"), 6), ylab="ratio")
+beeswarm(list, data=NULL, col=rep(c(1,4), each=5, times=3),　pch=16, cex=0.5, add=TRUE)
 
 
 ###treatment処理毎のグラフ
@@ -124,8 +123,7 @@ beeswarm(ratio~treatment, data=dx,　pch=c(16,16),
   lwd=2, ylim=c(0, 2.0), yaxs="i", cex=0.5, ylab="ratio")
 
 #25%, 50%, 75%の線を重ねる
-bxplot(r, col="brown",lty = 2, 
-       lwd=2, width = 0.5, add = TRUE)
+bxplot(r, col="brown", lty=2, lwd=2, width=0.5, add=TRUE)
 
 ###boxplot
 #boxのみ
@@ -136,29 +134,29 @@ boxplot(r, ylim=c(0, 2.0), las=1,
   names=c(rep(c("-", "+"), 3)), xlab="", ylab="ratio")
 
 #有意差
-segments(x0 = 0.9, y0 = 1.8, x1 = 2.1, y1 = 1.8)  #xとyの数値で始点と終点を指定
-segments(x0 = 2.9, y0 = 1.8, x1 = 4.1, y1 = 1.8)  
-segments(x0 = 4.9, y0 = 1.8, x1 = 6.1, y1 = 1.8) 
-segments(x0 = 0.9, y0 = 0.4, x1 = 3.1, y1 = 0.4) 
-segments(x0 = 0.9, y0 = 0.2, x1 = 5.1, y1 = 0.2)
+segments(x0=0.9, y0=1.8, x1=2.1, y1=1.8)  #xとyの数値で始点と終点を指定
+segments(x0=2.9, y0=1.8, x1=4.1, y1=1.8)  
+segments(x0=4.9, y0=1.8, x1=6.1, y1=1.8) 
+segments(x0=0.9, y0=0.4, x1=3.1, y1=0.4) 
+segments(x0=0.9, y0=0.2, x1=5.1, y1=0.2)
 
 #p値の表記
 par(font=3)
-text(x=1.1, y=1.75, labels="p",family = "mono", ps=5, cex=0.6)
-text(x=3.1, y=1.75, labels="p",family = "mono", ps=5, cex=0.6)
-text(x=5.1, y=1.75, labels="p",family = "mono", ps=5, cex=0.6)
-text(x=1.5, y=0.43, labels="p",family = "mono", ps=5, cex=0.6)
-text(x=2.5, y=0.23, labels="p",family = "mono", ps=5, cex=0.6)
+text(x=1.1, y=1.75, labels="p", family="mono", ps=5, cex=0.6)
+text(x=3.1, y=1.75, labels="p", family="mono", ps=5, cex=0.6)
+text(x=5.1, y=1.75, labels="p", family="mono", ps=5, cex=0.6)
+text(x=1.5, y=0.43, labels="p", family="mono", ps=5, cex=0.6)
+text(x=2.5, y=0.23, labels="p", family="mono", ps=5, cex=0.6)
 
 par(font=1)
-text(x=1.55, y=1.77, labels=" <2.2e-16",family="mono", ps=4, cex=0.6)
+text(x=1.55, y=1.77, labels=" <2.2e-16", family="mono", ps=4, cex=0.6)
 text(x=3.55, y=1.77, labels=" =1.05e-15", family="mono", ps=4, cex=0.6)
 text(x=5.55, y=1.77, labels=" =0.000206", family="mono", ps=4, cex=0.6)
 text(x=1.95, y=0.45, labels=" =0.002135", family="mono", ps=4, cex=0.6)
 text(x=2.95, y=0.25, labels=" <2.2e-16", family="mono", ps=4, cex=0.6)
 
 #＊の表記
-par(family= "HiraKakuProN-W3")
+par(family="HiraKakuProN-W3")
 text(x=1.5, y=1.83, labels="***", font=0.5, ps=5)
 text(x=3.5, y=1.83, labels="***", font=0.5, ps=5)
 text(x=5.5, y=1.83, labels="**", font=0.5, ps=5)

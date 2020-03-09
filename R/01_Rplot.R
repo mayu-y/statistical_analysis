@@ -43,12 +43,9 @@ boxplot(list,names=c("0", "FP", "wash1h", "wash2h"),
 segments(x0=1.0, y0=1.85, x1=2.0, y1=1.85) 
 segments(x0=1.0, y0=1.80, x1=3.0, y1=1.80)
 segments(x0=1.0, y0=1.75, x1=4.0, y1=1.75)
-text(x=1.5, y=1.88, labels="*", 
-  font=1, ps=5, cex=1.0)
-text(x=2.0, y=1.9, labels="*", 
-  font=1, ps=5, cex=1.0)
-text(x=2.5, y=1.78, labels="*", 
-  font=1, ps=5, cex=1.0)
+text(x=1.5, y=1.88, labels="*", font=1, ps=5, cex=1.0)
+text(x=2.0, y=1.9, labels="*", font=1, ps=5, cex=1.0)
+text(x=2.5, y=1.78, labels="*", font=1, ps=5, cex=1.0)
 
 #boxplot+beeswarm
 boxplot(list, ylim=c(0, 2.0), las = 1, cex.axis=0.75,
@@ -56,5 +53,6 @@ boxplot(list, ylim=c(0, 2.0), las = 1, cex.axis=0.75,
   rep(c("#1", "#2", "#3", "#4", "#5", "#6"),2),
   "#1", "#2", "#3", "#4", "#5"),
   ylab="ratio")
-beeswarm(list, data=NULL, col=c(rep("black",4),rep(c("Navy","Blue"), each=6),rep("cyan",5)),　pch = 16, cex=0.5, add=TRUE)
+beeswarm(list, data=NULL, col=c(rep("black",4),rep(c("Navy","Blue"), each=6),
+  rep("cyan",5)),　pch=16, cex=0.5, add=TRUE)
 

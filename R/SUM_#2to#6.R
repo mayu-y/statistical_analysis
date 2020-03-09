@@ -52,7 +52,7 @@ dX <- rbind(A, B, C, D, E, F, G)
 beeswarm(ratio~time, data=dX,　pch=c(16,16), 
   las=1, tck=0.02, lwd=2, ylim=c(0, 2.0), yaxs="i", cex=0.5, 
   ylab="ratio", xlab="time(min)")
-M <-  data.frame(time=c("0", "10", "20", "30", "40", "50", "60"), 
+M <- data.frame(time=c("0", "10", "20", "30", "40", "50", "60"), 
   median=c(mean(A[,2]),mean(B[,2]), mean(C[,2]), mean(D[,2]), mean(E[,2]), mean(F[,2]), mean(G[,2])))
 plot((M[,2]), type="o",ylim=c(0, 2.0), xlim=c(0, 8.0), main="Flavopiridol")
 beeswarm(ratio~time, data=dX,　pch=c(16,16), 
@@ -89,7 +89,9 @@ plot(time, ratio_C, type="o", ylim=c(0, 2.0), ylab="", xlab="", cex=0.5, pch=16,
 par(new=T)
 plot(time, ratio_D, type="o", ylim=c(0, 2.0), ylab="", xlab="", cex=0.5, pch=16, col="blue")
 par(new=T)
-plot(time, ratio_E, type="o", ylim=c(0, 2.0), ylab="ratio", xlab="time(min)", cex=0.5, cex.lab=1.5, pch=16, col="blue", main="")
+plot(time, ratio_E, type="o", ylim=c(0, 2.0), ylab="ratio", xlab="time(min)", 
+  cex=0.5, cex.lab=1.5, pch=16, col="blue", main="")
 
-legend("bottomleft", legend=c("mock", "Flavopiridol") , col=c("black","blue"), lty=c("solid","solid"))
+legend("bottomleft", legend=c("mock", "Flavopiridol") , 
+  col=c("black","blue"), lty=c("solid","solid"))
 

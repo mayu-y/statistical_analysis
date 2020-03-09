@@ -49,13 +49,15 @@ g <- data.frame(time="60", ratio=c(ag, bg, cg, dg, eg))
 #beeswarm
 library(beeswarm)
 dx <- rbind(a, b, c, d, e, f, g)
-beeswarm(ratio~time, data=dx,　pch=c(16,16), 
+beeswarm(ratio~time, data=dx, pch=c(16,16), 
   las=1, tck=0.02, 
   lwd=2, ylim=c(0.5, 2.0), yaxs="i", cex=0.5, 
   ylab="ratio", xlab="time(min)")
+
 m <- data.frame(time=c("0", "10", "20", "30", "40", "50", "60"), 
-  median=c(median(a[,2]),median(b[,2]), median(c[,2]), median(d[,2]), median(e[,2]), median(f[,2]), median(g[,2])))
-plot(m[,2], type="o",ylim=c(0.5, 2.0), xlim=c(0, 8.0), main="mock")
+  median=c(median(a[,2]), median(b[,2]), median(c[,2]), median(d[,2]), median(e[,2]), median(f[,2]), median(g[,2])))
+plot(m[,2], type="o", ylim=c(0.5, 2.0), xlim=c(0, 8.0), main="mock")
+
 beeswarm(ratio~time, data=dx,　pch=c(16,16), 
   las=1, tck=0.02, lwd=2, ylim=c(0.5, 2.0), yaxs="i", cex=0.5, 
   ylab="ratio", xlab="time(min)", add=TRUE)

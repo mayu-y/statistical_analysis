@@ -23,8 +23,7 @@ beeswarm(ratio~time, data=dx,　pch=c(16,16),
   yaxs="i", cex=0.5, ylab="ratio", xlab="time(min)")
 
 #25%, 50%, 75%の線を重ねる
-bxplot(dx, data=NULL, col="brown",lty=2, 
-  lwd=2, width=0.5, add=TRUE)
+bxplot(dx, data=NULL, col="brown",lty=2, lwd=2, width=0.5, add=TRUE)
 
 ###all sample グラフ###
 list <- list("0"=da, "10"=db, "20"=dc, "30"=dd, "40"=de, "50"=df, "60"=dg)
@@ -33,5 +32,5 @@ boxplot(list, ylim=c(0, 2.0),las=1, cex.axis=0.75,
   names=c("0", "10", "20", "30", "40", "50", "60"),
   ylab="ratio",xlab="time(min)",main="mock")
 #beeswarm追加
-beeswarm(list, data=NULL, pch = 16, cex=0.5, add=TRUE)
+beeswarm(list, data=NULL, pch=16, cex=0.5, add=TRUE)
 
