@@ -48,7 +48,7 @@ text(x=2.0, y=1.9, labels="*", font=1, ps=5, cex=1.0)
 text(x=2.5, y=1.78, labels="*", font=1, ps=5, cex=1.0)
 
 #boxplot+beeswarm
-boxplot(list, ylim=c(0, 2.0), las = 1, cex.axis=0.75,
+boxplot(list, ylim=c(0, 2.0), las=1, cex.axis=0.75,
   names=c("#1", "#2", "#3", "#4",
   rep(c("#1", "#2", "#3", "#4", "#5", "#6"),2),
   "#1", "#2", "#3", "#4", "#5"),
